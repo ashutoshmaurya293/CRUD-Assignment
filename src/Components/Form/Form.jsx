@@ -1,58 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
-const Form = ({setOpenForm}) => {
-    const ats=(e)=>{
+const Form = ({
+  setOpenForm,
+  Name,
+  setName,
+  LastName,
+  setLastName,
+  Email,
+  setEmail,
+}) => {
+  const ats = (e) => {
     console.log("ats");
-            }
-    const Toggle=(e)=>{
-   if(e.target.className == "FullForm"){
-    setOpenForm(false)
-   }
-            }
-    const submit=(e)=>{
-        e.preventDefault()
+  };
+  const Toggle = (e) => {
+    if (e.target.className == "FullForm") {
+      setOpenForm(false);
     }
+  };
+  const submit = (e) => {
+    e.preventDefault();
+  };
   return (
-   <div className="FullForm" onClick={Toggle}>
-     <form className="form">
-      <p className="title">Create Invoice </p>
-      <div className="flex">
+    <div className="FullForm" onClick={Toggle}>
+      <form className="form">
+        <p className="title">Create Invoice </p>
+        <div className="flex">
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              className="input"
+              value={Name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <span>Firstname</span>
+          </label>
+
+          <label>
+            <input
+              required=""
+              placeholder=""
+              type="text"
+              className="input"
+              value={LastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <span>Lastname</span>
+          </label>
+        </div>
+
         <label>
-          <input required="" placeholder="" type="text" className="input" />
-          <span>Firstname</span>
+          <input
+            required=""
+            placeholder=""
+            type="email"
+            className="input"
+            value={Email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span>Email</span>
         </label>
 
         <label>
-          <input required="" placeholder="" type="text" className="input" />
-          <span>Lastname</span>
+          <input required="" placeholder="" type="number" className="input" />
+          <span>Total Amount</span>
         </label>
-      </div>
+        <label className="radio-button">
+          <input type="radio" name="example-radio" value="option1" />
+          <span className="radio"></span>
+          Male
+        </label>
 
-      <label>
-        <input required="" placeholder="" type="email" className="input" />
-        <span>Email</span>
-      </label>
+        <label className="radio-button">
+          <input type="radio" name="example-radio" value="option2" />
+          <span className="radio"></span>
+          Frmale
+        </label>
 
-      <label>
-        <input required="" placeholder="" type="number" className="input" />
-        <span>Total Amount</span>
-      </label>
-      <label className="radio-button">
-        <input type="radio" name="example-radio" value="option1" />
-        <span className="radio"></span>
-        Male
-      </label>
-
-      <label className="radio-button">
-        <input type="radio" name="example-radio" value="option2" />
-        <span className="radio"></span>
-        Frmale
-      </label>
-
-      <button className="submit" onClick={(e)=>submit(e)}>Submit</button>
-    </form>
-   </div>
+        <button className="submit" onClick={(e) => submit(e)}>
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

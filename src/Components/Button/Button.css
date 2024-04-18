@@ -1,5 +1,6 @@
-button {
+.create {
     border: none;
+    margin: 1rem;
     display: flex;
     padding: 0.75rem 1.5rem;
     background-color: #2476f1;

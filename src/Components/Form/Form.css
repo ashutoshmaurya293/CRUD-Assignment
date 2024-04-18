@@ -137,7 +137,7 @@
 .radio-button {
   display: flex;
   gap: 10px;
-  margin: 10px;
+  margin: 0px;
   position: relative;
   align-items: center;
   color: black;
