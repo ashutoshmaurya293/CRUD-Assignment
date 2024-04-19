@@ -9,21 +9,30 @@ const Form = ({
   setLastName,
   Email,
   setEmail,
+  submit,
+  Amount,
+  setAmount,
+  create,
+  Update,
 }) => {
-  const ats = (e) => {
-    console.log("ats");
-  };
+  // TOGGLE
   const Toggle = (e) => {
     if (e.target.className == "FullForm") {
       setOpenForm(false);
     }
   };
-  const submit = (e) => {
+
+  // UPDATEHANDALER
+  const UpdateHandaler = (e) => {
+    e.preventDefault();
+    Update();
+  };
+  const sub = (e) => {
     e.preventDefault();
   };
   return (
     <div className="FullForm" onClick={Toggle}>
-      <form className="form">
+      <form className="form" onSubmit={(e) => sub(e)}>
         <p className="title">Create Invoice </p>
         <div className="flex">
           <label>
@@ -64,7 +73,14 @@ const Form = ({
         </label>
 
         <label>
-          <input required="" placeholder="" type="number" className="input" />
+          <input
+            required=""
+            placeholder=""
+            type="number"
+            className="input"
+            value={Amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
           <span>Total Amount</span>
         </label>
         <label className="radio-button">
@@ -78,10 +94,15 @@ const Form = ({
           <span className="radio"></span>
           Frmale
         </label>
-
-        <button className="submit" onClick={(e) => submit(e)}>
-          Submit
-        </button>
+        {create ? (
+          <button className="submit" onClick={(e) => submit(e)}>
+            Submit
+          </button>
+        ) : (
+          <button className="submit" onClick={(e) => UpdateHandaler(e)}>
+            Update
+          </button>
+        )}
       </form>
     </div>
   );

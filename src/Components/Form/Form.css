@@ -3,19 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-.FullForm{
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(5px);
+.FullForm {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(1.5px);
 }
 .form {
   display: flex;
@@ -25,8 +25,7 @@
   background-color: #ede2e2;
   padding: 20px;
   border-radius: 20px;
-  /* position: relative; */
-  position:absolute ;
+  position: absolute;
   z-index: 99;
 }
 
